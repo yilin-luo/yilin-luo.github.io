@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yilin Luo is a student researcher at Principia and the Gatsby Unit, UCL, working on the science of deep learning.">
+  <title>Yilin Luo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+  <!-- Songti-style serif for the Chinese name, on every device. The text= part downloads only
+       these three characters; if the name changes, update it here too (URL-encoded). -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&amp;text=%E7%BD%97%E5%BC%88%E9%BA%9F&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== Header ===== -->
+  <header class="intro">
+    <div class="thumb">
+      <img src="img/profile.jpg" alt="Yilin Luo" width="800" height="800">
+      <p class="caption">Hampton Court Palace, 2026</p>
+    </div>
+    <div>
+      <h1>Luo, Yilin (Nick) <span class="zh" lang="zh-Hans">罗弈麟</span></h1>
+      <p>
+        Student Researcher, <a href="https://principia-ai.org/">Principia</a><br>
+        <a href="https://www.ucl.ac.uk/life-sciences/gatsby">Gatsby Computational Neuroscience Unit</a>, UCL
+      </p>
+      <!-- The address is deliberately not written out in full, to keep it away from spam scrapers -->
+      <p class="contact">Email: luoyilin[first six digits of <i>e</i>]@gmail.com</p>
+    </div>
+  </header>
+
+  <!-- ===== Bio ===== -->
+  <h2>Bio</h2>
+  <p>
+    I am a student researcher at <a href="https://principia-ai.org/">Principia</a> and the
+    <a href="https://www.ucl.ac.uk/life-sciences/gatsby">Gatsby Unit</a>, UCL, supervised by
+    <a href="https://www.saxelab.org/">Prof. Andrew Saxe</a> and collaborating with
+    <a href="https://antonioscl.github.io/">Antonio Sclocchi</a> and
+    <a href="https://jinhl9.github.io/">Jin Hwa Lee</a>.
+    My research focuses on the science of deep learning, especially how networks learn and forget.
+    I currently use analytically tractable hierarchical and compositional data to explain
+    phenomena observed in real LLMs. Beyond that, I am interested in the intersection of AI and neuroscience.
+    <br>
+    Previously, I completed my MSc in Machine Learning at UCL. Before that, I was an undergraduate at the
+    <a href="https://english.phy.pku.edu.cn/">School of Physics, Peking University</a>, where I worked with
+    <a href="https://kiaa.pku.edu.cn/info/1010/9774.htm">Prof. Jinyi Shangguan</a>
+    on galaxies and supermassive black holes.
+  </p>
+  <!-- Remove this paragraph once the application season is over -->
+  <p>I am applying to PhD programs starting in Fall 2027!</p>
+
+  <!-- ===== Publication ===== -->
+  <h2>Publication</h2>
+  <div class="tabs">
+    <button type="button" class="active" data-tab="selected">Selected papers</button>
+    <button type="button" data-tab="all">All papers</button>
+  </div>
+
+  <div id="selected" class="tab-panel active">
+    <div class="paper">
+      <div class="thumb">
+        <img src="img/two_timescales.svg" alt="Animated plots of deleted-rule rate and representation quality against fine-tuning step">
+      </div>
+      <p>
+        <span class="title">Two Timescales of Forgetting in Fine-Tuning of Language Models: Fast Behavioral Suppression and Slow Representational Drift</span><br>
+        Yilin Luo*, Jin Hwa Lee*, Andrew M. Saxe, Antonio Sclocchi<br>
+        Under review at ICLR 2027
+      </p>
+    </div>
+  </div>
+
+  <div id="all" class="tab-panel">
+    <ul class="paper-list">
+      <li>
+        <span class="title">Two Timescales of Forgetting in Fine-Tuning of Language Models: Fast Behavioral Suppression and Slow Representational Drift</span><br>
+        Yilin Luo*, Jin Hwa Lee*, Andrew M. Saxe, Antonio Sclocchi<br>
+        Under review at ICLR 2027
+      </li>
+      <li>
+        <span class="title">Validating Sequential Monte Carlo for Gravitational-Wave Inference</span><br>
+        Michael J. Williams, Minas Karamanis, Yilin Luo, Uro&scaron; Seljak<br>
+        MNRAS 2025<br>
+        <a href="https://doi.org/10.1093/mnras/staf1458">mnras</a> |
+        <a href="https://arxiv.org/abs/2506.18977">arxiv</a>
+      </li>
+      <li>
+        <span class="title">When Local Variance Optimality Is Not Enough: RoPE-Aligned Q/K Rotations for Dynamic 4-Bit Quantisation</span><br>
+        Shuhan Wang, Yilin Luo, Nan Xu, Chi Wang Cheung<br>
+        Under review at TMLR<br>
+        <a href="https://arxiv.org/abs/2608.13365">arxiv</a>
+      </li>
+    </ul>
+  </div>
+  <p class="note">* Equal contribution</p>
+
+  <!-- ===== Blog ===== -->
+  <h2>Blog</h2>
+  <p class="muted">Coming soon.</p>
+  <!-- To add posts, replace the line above with:
+  <div class="entries">
+    <span>2026-11-09</span> <a href="blog/my-post.html">Post title</a>
+    <span>2026-10-01</span> <a href="blog/older-post.html">Older post title</a>
+  </div>
+  -->
+
+  <!-- ===== Misc ===== -->
+  <h2>Misc</h2>
+  <p class="muted">Coming soon.</p>
+  <!-- The photography page is ready at photos.html; to link it again, replace the line above with:
+  <p><a href="photos.html">Photography</a></p>
+  -->
+
+</div>
+
+<script>
+  // Switch between "Selected papers" and "All papers"
+  document.querySelectorAll('.tabs button').forEach(function (button) {
+    button.addEventListener('click', function () {
+      document.querySelectorAll('.tabs button').forEach(function (b) {
+        b.classList.toggle('active', b === button);
+      });
+      document.querySelectorAll('.tab-panel').forEach(function (panel) {
+        panel.classList.toggle('active', panel.id === button.dataset.tab);
+      });
+    });
+  });
+</script>
+</body>
+</html>

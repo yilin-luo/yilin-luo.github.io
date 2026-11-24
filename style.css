@@ -1,0 +1,185 @@
+/* Yilin Luo — personal homepage */
+
+:root {
+  --text: #000;
+  --heading: #202020;
+  --link: #2268c3;
+  --rule: #aaa;
+  --muted: #777;
+  --tab-bg: #ececec;
+  --tab-active-bg: #666;
+
+  /* STIX Two Text: the same family the paper figures are lettered in.
+     Loaded from Google Fonts; falls back to Times if that fails. */
+  --font: "STIX Two Text", "Times New Roman", Times, "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", SimSun, serif;
+  --font-size: 17px;
+  --line: 1.34;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--font-size);
+  line-height: var(--line);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Text column is at most 780px wide (about 110 characters a line in STIX).
+   The side margin grows with the window (16px on a phone, up to 64px) so the
+   text never sits against the edge in a half-width window or a narrow pane. */
+.page {
+  box-sizing: content-box;
+  max-width: 780px;
+  margin: 0 auto;
+  padding-block: 22px 48px;
+  padding-left: max(clamp(16px, 5vw, 64px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(16px, 5vw, 64px), env(safe-area-inset-right, 0px));
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+p { margin: 0 0 1.2em; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+h2 {
+  margin: 10px 0 0.45em;
+  padding: 0.8em 0 0.2em;
+  border-bottom: 1px solid var(--rule);
+  color: var(--heading);
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+.muted { color: var(--muted); }
+
+/* Header: photo on the left, name and affiliation on the right */
+
+.intro,
+.paper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.intro .thumb,
+.paper .thumb {
+  flex: 0 0 34%;   /* 265px of 780: keeps the paper figure at its natural 250px */
+  padding-right: 16px;
+}
+
+.intro .thumb img { width: 82%; }
+
+.intro h1 {
+  margin: 0 0 0.8em;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Chinese name: Songti-style serif (Noto Serif SC web font, then the system
+   Songti), regular weight, set slightly apart from the Latin name */
+.intro h1 .zh {
+  margin-left: 0.3em;
+  font-family: "Noto Serif SC", "Songti SC", STSong, "Source Han Serif SC", "Noto Serif CJK SC", SimSun, serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.intro p { margin: 0; }
+
+/* Where and when the photo was taken: small and quiet, under the photo */
+.intro .caption {
+  margin-top: 6px;
+  font-size: 0.8em;
+  color: var(--muted);
+}
+.intro .contact { margin-top: 1.3em; }
+
+/* Publications */
+
+.tabs { margin: 10px 0; }
+
+.tabs button {
+  margin-right: 12px;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--tab-bg);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: var(--tab-active-bg);
+  color: #fff;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* The thumbnail fills its column and its top lines up with the top of the text.
+   For a narrower (e.g. 4:3) figure, add style="width:65%" to that <img>. */
+.paper { margin-bottom: 1em; }
+.paper .thumb img { width: 100%; }
+.paper .title { font-weight: 600; }
+.paper p { margin: 0; }
+
+.paper-list { margin: 0; padding: 0; list-style: none; }
+.paper-list li { margin-bottom: 1em; }
+.paper-list .title { font-weight: 600; }
+
+.note { margin-top: 0.9em; font-size: 0.85em; color: var(--muted); }
+
+/* Date + link lists (Blog, Misc) */
+
+.entries {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 18px;
+  row-gap: 2px;
+  margin: 0 0 1.2em;
+}
+
+/* Photography page */
+
+.back { margin: 0 0 4px; }
+
+.gallery {
+  columns: 3 240px;
+  column-gap: 12px;
+}
+
+.gallery img,
+.gallery figure {
+  width: 100%;
+  margin: 0 0 12px;
+  break-inside: avoid;
+}
+
+.gallery figcaption {
+  margin-top: 4px;
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .intro,
+  .paper { display: block; }
+
+  .intro .thumb,
+  .paper .thumb {
+    padding: 0;
+    margin-bottom: 14px;
+  }
+
+  .intro .thumb img { width: 150px; }
+  /* On a phone the figure spans the text width, like the rules and paragraphs */
+  .paper .thumb img { max-width: 400px; }
+}
